@@ -4,6 +4,64 @@
 frappe.ui.form.on("Livestock", {
 	refresh: function(frm) {
         frm.trigger("calculate_closing_valuation");
+
+        frm.set_query("breed",function() {
+            return{
+                filters: { "animal_type": frm.doc.animal_type}
+
+            };
+        });
+
+        frm.set_query("animal_group", function() {
+            return {
+                filters: {"animal_type": frm.doc.animal_type}
+            };
+        });
+        
+    if (frm.doc.status==="Active") {
+        frm.add_custom_button('Log Activity', () => {
+            let dialog = new frappe.ui.Dialog({
+                title: 'Log Activity',
+                fields: [
+                 { label:'Reason for termination',
+                   fieldname:'reason',
+                   fieldtype:'Select',
+                   options:'Sold\nDead\nMissing\nSlaughtered',
+                   reqd:1 
+                 },
+                 {
+                    label: 'Customer',
+                    fieldname: 'customer',
+                    fieldtype:'Link',
+                    options:'Customer',
+                    depends_on:'eval:doc.reason=="Sold"',
+                    mandatory_depends_on: 'eval:doc.reason=="Sold"'
+                 },
+                 
+                 { label: 'Selling price',
+                   fieldname:'selling_price',
+                   fieldtype: 'Currency',
+                   depends_on: 'eval:doc.reason=="Sold"',
+                   mandatory_depends_on: 'eval:doc.reason=="Sold"'
+
+                }
+
+            ],
+                primary_action_label: 'Submit',
+                primary_action(values) {
+                    frappe.msgprint("Reason: " + values.reason + 
+                    (values.customer ? ", Customer: " + values.customer : "") +
+                    (values.selling_price ? ", Price: " + values.selling_price : ""));
+                dialog.hide();
+                }
+            });
+            dialog.show();
+        });
+    }
+
+     },animal_type: function(frm) {
+        frm.set_value("breed", "");
+        frm.set_value("animal_group", "")
     },
     opening_valuation_rate: function(frm) {
         frm.trigger("calculate_closing_valuation");
