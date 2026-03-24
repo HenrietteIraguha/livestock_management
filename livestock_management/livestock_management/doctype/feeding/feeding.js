@@ -2,6 +2,9 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Feeding", {
+    refresh: function(frm) {
+        frm.trigger("toggle_fields");
+    },
     quantity: function(frm) {
         frm.set_value("total_cost", frm.doc.quantity * frm.doc.valuation_rate);
     },
@@ -16,6 +19,9 @@ frappe.ui.form.on("Feeding", {
                 }
             });
         }
+    },
+    entry_type: function(frm) {
+        frm.trigger("toggle_fields");
     },
     toggle_fields: function(frm) {
         var is_individual = frm.doc.entry_type === "Individual";
@@ -34,9 +40,4 @@ frappe.ui.form.on("Feeding", {
             frm.set_value("animal_id", "");
         }
     }
-
 });
-// 	refresh(frm) {
-
-// 	},
-// });

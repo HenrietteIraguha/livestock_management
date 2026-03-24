@@ -47,16 +47,25 @@ frappe.ui.form.on("Livestock", {
                 }
 
             ],
-                primary_action_label: 'Submit',
-                primary_action(values) {
-                    frappe.msgprint("Reason: " + values.reason + 
-                    (values.customer ? ", Customer: " + values.customer : "") +
-                    (values.selling_price ? ", Price: " + values.selling_price : ""));
-                dialog.hide();
-                }
-            });
-            dialog.show();
+               primary_action_label: 'Submit',
+               primary_action(values) {
+                frappe.call({
+                    method: 'livestock_management.livestock_management.doctype.livestock.livestock.terminate_livestock',
+                    args: {
+                        livestock_id: frm.doc.name,
+                        reason: values.reason,
+                        customer: values.customer || null,
+                        selling_price: values.selling_price || null
+                    },
+                    callback: function(r) {
+                        dialog.hide();
+                        frm.reload_doc();
+                    }
+                });
+            }
         });
+        dialog.show();
+    });
     }
 
      },animal_type: function(frm) {
