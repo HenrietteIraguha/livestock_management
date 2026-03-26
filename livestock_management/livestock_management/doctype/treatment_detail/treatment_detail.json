@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-26 00:04:24.313583",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "treatment_id",
+  "product",
+  "quantity",
+  "column_break_zphu",
+  "treatment_date",
+  "veterinarian",
+  "total_cost"
+ ],
+ "fields": [
+  {
+   "fieldname": "treatment_id",
+   "fieldtype": "Data",
+   "label": "Treatment ID"
+  },
+  {
+   "fieldname": "treatment_date",
+   "fieldtype": "Date",
+   "label": "Treatment Date"
+  },
+  {
+   "fieldname": "product",
+   "fieldtype": "Data",
+   "label": "Product"
+  },
+  {
+   "fieldname": "veterinarian",
+   "fieldtype": "Data",
+   "label": "Veterinarian"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost"
+  },
+  {
+   "fieldname": "column_break_zphu",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-26 00:10:34.308126",
+ "modified_by": "Administrator",
+ "module": "Livestock Management",
+ "name": "Treatment Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

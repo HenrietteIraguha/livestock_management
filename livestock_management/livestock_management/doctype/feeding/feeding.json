@@ -7,33 +7,23 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_h0pu",
-  "amended_from",
   "entry_type",
-  "animal_id",
   "group_id",
-  "feeding_date",
   "feeding_account",
-  "warehouse",
   "product",
-  "valuation_rate",
   "quantity",
-  "total_cost",
-  "description"
+  "description",
+  "column_break_uxsp",
+  "animal_id",
+  "feeding_date",
+  "warehouse",
+  "valuation_rate",
+  "total_cost"
  ],
  "fields": [
   {
    "fieldname": "section_break_h0pu",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Feeding",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   },
   {
    "fieldname": "entry_type",
@@ -100,13 +90,17 @@
    "fieldname": "description",
    "fieldtype": "Text",
    "label": "Description"
+  },
+  {
+   "fieldname": "column_break_uxsp",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-16 22:12:24.564445",
+ "modified": "2026-03-26 00:23:39.216041",
  "modified_by": "Administrator",
  "module": "Livestock Management",
  "name": "Feeding",

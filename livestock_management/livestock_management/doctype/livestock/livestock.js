@@ -42,8 +42,8 @@ frappe.ui.form.on("Livestock", {
                    fieldname:'selling_price',
                    fieldtype: 'Currency',
                    depends_on: 'eval:doc.reason=="Sold"',
-                   mandatory_depends_on: 'eval:doc.reason=="Sold"'
-
+                   read_only: 1,
+                   default: frm.doc.closing_valuation_rate
                 }
 
             ],

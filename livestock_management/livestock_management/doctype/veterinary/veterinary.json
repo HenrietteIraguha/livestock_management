@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "vet_name",
+  "column_break_gome",
   "phone_number"
  ],
  "fields": [
@@ -22,12 +23,16 @@
    "fieldname": "phone_number",
    "fieldtype": "Phone",
    "label": "Phone number"
+  },
+  {
+   "fieldname": "column_break_gome",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-12 17:55:34.630300",
+ "modified": "2026-03-26 00:22:33.059728",
  "modified_by": "Administrator",
  "module": "Livestock Management",
  "name": "Veterinary",

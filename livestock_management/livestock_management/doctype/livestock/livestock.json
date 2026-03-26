@@ -8,23 +8,26 @@
  "field_order": [
   "basic_info_tab",
   "registry_number",
-  "animal_name",
   "animal_type",
-  "animal_group",
   "breed",
-  "status",
-  "date_of_acquire",
   "opening_valuation_rate",
   "total_treatment_cost",
-  "total_feeding_cost",
   "closing_valuation_rate",
+  "column_break_rvrm",
+  "animal_name",
+  "animal_group",
+  "status",
+  "date_of_acquire",
+  "total_feeding_cost",
   "additional_info_tab",
   "breeding_stock",
   "height",
   "description",
   "method_acquired",
   "treatment_tab",
+  "treatment_history",
   "feeding_tab",
+  "feeding_history",
   "image_tab",
   "animal_image"
  ],
@@ -156,12 +159,28 @@
    "fieldname": "animal_image",
    "fieldtype": "Attach Image",
    "label": "Animal Image"
+  },
+  {
+   "fieldname": "column_break_rvrm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "treatment_history",
+   "fieldtype": "Table",
+   "label": "Treatment History",
+   "options": "Treatment Detail"
+  },
+  {
+   "fieldname": "feeding_history",
+   "fieldtype": "Table",
+   "label": "Feeding History",
+   "options": "feeding detail"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-14 23:42:49.909231",
+ "modified": "2026-03-26 00:21:02.394541",
  "modified_by": "Administrator",
  "module": "Livestock Management",
  "name": "Livestock",

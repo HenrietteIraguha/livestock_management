@@ -7,8 +7,9 @@
  "engine": "InnoDB",
  "field_order": [
   "group_name",
-  "animal_type",
-  "total_animals"
+  "total_animals",
+  "column_break_udrs",
+  "animal_type"
  ],
  "fields": [
   {
@@ -32,12 +33,16 @@
    "fieldtype": "Int",
    "label": "Total animals",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_udrs",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-12 17:19:35.430808",
+ "modified": "2026-03-26 00:21:55.120015",
  "modified_by": "Administrator",
  "module": "Livestock Management",
  "name": "Animal Group",

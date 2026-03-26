@@ -7,34 +7,24 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_ggku",
-  "amended_from",
   "entry_type",
-  "animal_id",
-  "group_id",
-  "veterinarian",
   "treatment_date",
-  "treatment_account",
-  "warehouse",
-  "product",
+  "veterinarian",
   "valuation_rate",
   "quantity",
   "total_cost",
+  "product",
+  "column_break_zazv",
+  "animal_id",
+  "group_id",
+  "treatment_account",
+  "warehouse",
   "description"
  ],
  "fields": [
   {
    "fieldname": "section_break_ggku",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Treatment",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   },
   {
    "fieldname": "entry_type",
@@ -107,13 +97,17 @@
    "fieldname": "description",
    "fieldtype": "Text",
    "label": "Description"
+  },
+  {
+   "fieldname": "column_break_zazv",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-16 21:58:14.559853",
+ "modified": "2026-03-26 00:08:31.907145",
  "modified_by": "Administrator",
  "module": "Livestock Management",
  "name": "Treatment",

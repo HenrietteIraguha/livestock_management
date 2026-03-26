@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "breed_name",
+  "column_break_gidz",
   "animal_type"
  ],
  "fields": [
@@ -24,12 +25,16 @@
    "label": "Animal type",
    "options": "Animal Type",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gidz",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-12 17:33:47.357861",
+ "modified": "2026-03-26 00:22:15.441824",
  "modified_by": "Administrator",
  "module": "Livestock Management",
  "name": "Breed",

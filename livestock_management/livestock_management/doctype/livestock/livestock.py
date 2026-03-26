@@ -79,13 +79,23 @@ def terminate_livestock(livestock_id, reason, customer=None, selling_price=None)
         je.submit()
 
     if reason == "Sold" and customer:
+        if not frappe.db.exists("Item", livestock_id):
+            item = frappe.get_doc({
+                "doctype": "Item",
+                "item_code": livestock_id,
+                "item_name": livestock.animal_name or livestock_id,
+                "item_group":"Livestock Sales",
+                "is_stock_item": 0
+            })
+            item.insert()
+
         si = frappe.get_doc({
             "doctype": "Sales Invoice",
             "customer": customer,
             "posting_date": frappe.utils.today(),
             "items": [
                 {
-                    "item_code": "Livestock Sale",
+                    "item_code": livestock_id,
                     "qty": 1,
                     "rate": livestock.closing_valuation_rate
                 }
